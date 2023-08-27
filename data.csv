@@ -1,0 +1,110 @@
+nombre,nivel,fecha,solucion
+Secuencia dentro de una lista,Intermedio,21 Julio 2022,"```python
+def max_seq(sequence):
+    new_sequence, current_sequence = [], [0]
+
+    for element in sequence:
+
+        if (element - 1) ==  current_sequence[-1]:
+            current_sequence.append(element)
+        else:
+            current_sequence = []
+            current_sequence.append(element)
+
+        if len(current_sequence) > len(new_sequence):
+            new_sequence = current_sequence
+
+    return [] if len(new_sequence) == 1 else new_sequence
+
+print(max_seq([19,24,13,5,6,7,8,9,3,7]))
+
+```"
+Ordenamiento rudimentario,Básico,22 Julio 2022,"```python
+n = 0
+nums = []
+while n<3:
+    num = int(input(f""Ingrese el número [{n+1}]: ""))
+    if num !=0:
+        nums.append(num)
+        n+=1
+    else:
+        print(""\nDebe insertar números positivos"")
+        break
+
+nums.sort(reverse=True)
+for x in nums:
+    print(x,end="" "")
+```"
+Excedente,Básico,22 Julio 2022,"```python
+while True:
+    nHormigas = int(input(""Ingrese el número de hormigas: ""))
+    nGranos = int(input(""Ingrese el número de granos de azúcar: ""))
+
+    if nHormigas <5000 and nGranos <5000 and nHormigas >1 and nGranos>1:
+        excendente = nGranos%nHormigas
+        print(""Excedente ""+str(excendente))
+        break
+    else:
+        print(""\nEscribe un número menor a 5000"")
+        pass
+
+```"
+Obtener elementos de una tupla,Básico,22 Julio 2022,"```python
+elements = ([-3, -2, -1, 0], [1, 2, 4, 5], [6, 7, 8, 9, 10])
+
+index_t = elements[1]
+index_t.insert(2,3)
+
+print(elements)
+```"
+Formato de fechas,Básico,19 Julio 2022,"```python
+import datetime
+
+f= datetime.datetime.now()
+
+print(f'{f.year}-{f.month}-{f.day} {f.hour}:{f.minute}:{f.second}')
+
+```"
+Convertir de número decimal a número binario,Básico,5 Marzo 2022,"```python
+
+num = int(input(""Número decimal: ""))
+binario = format(num,'b')
+print(f'Número binario: {binario}')
+```"
+Película por edades,Básico,4 Marzo 2022,"edad = int(input(""Edad: ""))
+
+peliculas = [""Coco"",""Avengers: Endgame"",""Matrix"",""El libro verde"",""Un golpe con estilo""]
+
+if edad <=16:
+    print(peliculas[0])
+elif edad >= 17 and edad <=25:
+    print(peliculas[1])
+elif edad >=26 and edad <=40:
+    print(peliculas[2])
+elif edad >=41 and edad <=60:
+    print(peliculas[3])
+elif edad >60:
+    print(peliculas[4])"
+Tributar impuestos.,Básico,4 Marzo 2022,"edad = int(input(""Ingrese su edad: ""))
+
+if edad >= 18:
+    print(""Debes tributar impuestos"")
+elif edad < 18 or edad < 0:
+    print(""Por el momento no es necesario realizar una declaración"")"
+Patrones *,Básico,4 Marzo 2022,"x = 5
+for i in range(x):
+    for j in range(i):
+        print ('* ', end="""")
+    print('')
+
+for i in range(x,0,-1):
+    for j in range(i):
+        print('* ', end="""")
+    print('')"
+Algoritmo palindromo,Básico,4 Febrero 2022,"def palindromo(sentencia):
+    if sentencia.lower() == """".join(reversed(sentencia)).lower():
+        print(True)
+    else:
+        print(False)        
+palindromo('Anitalavalatina')
+palindromo('perro')"
